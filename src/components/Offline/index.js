@@ -12,3 +12,5 @@ const Offline = () => (
     </Segment>
   </Container>
 );
+
+export default Offline;

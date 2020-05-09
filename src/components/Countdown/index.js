@@ -63,7 +63,7 @@ class Countdown extends Component {
         />
         <Popup
           content='Minutes'
-          trigger={<Button active>{seconds}</Button>}
+          trigger={<Button active>{minutes}</Button>}
           position='bottom left'
         />
         <Popup

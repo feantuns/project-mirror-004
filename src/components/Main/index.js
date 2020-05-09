@@ -1,8 +1,21 @@
-import React, { Component } from 'react'
-import { Container, Segment, Item, Dropdown, Divider, Button } from 'semantic-ui-react';
-import codeImg from '../../assets/images/code.png'
+import React, { Component } from 'react';
+import {
+  Container,
+  Segment,
+  Item,
+  Dropdown,
+  Divider,
+  Button,
+} from 'semantic-ui-react';
+import codeImg from '../../assets/images/code.png';
 
-import { CATEGORIES, NUM_OF_QUESTIONS, DIFFICULTY, QUESTIONS_TYPE, COUNTDOWN_TIME } from '../../constants';
+import {
+  CATEGORIES,
+  NUM_OF_QUESTIONS,
+  DIFFICULTY,
+  QUESTIONS_TYPE,
+  COUNTDOWN_TIME,
+} from '../../constants';
 
 class Main extends Component {
   constructor(props) {
@@ -14,8 +27,8 @@ class Main extends Component {
       difficulty: null,
       type: null,
       time: null,
-    }
-    
+    };
+
     this.setValue = this.setValue.bind(this);
   }
 
@@ -64,72 +77,72 @@ class Main extends Component {
                       this.setValue(name, value)
                     }
                   />
-                  <br/>
-                  <Dropdown 
+                  <br />
+                  <Dropdown
                     fluid
                     selection
-                    name="numOfQ"
-                    placeholder="Select No. of Questions"
+                    name='numOfQ'
+                    placeholder='Select No. of Questions'
                     options={NUM_OF_QUESTIONS}
-                    onChange={(e, { name, value }) => 
-                    this.setValue(name, value);
-                  }
+                    onChange={(e, { name, value }) =>
+                      this.setValue(name, value)
+                    }
                   />
-                  <br/>
-                  <Dropdown 
+                  <br />
+                  <Dropdown
                     fluid
                     selection
-                    name="difficulty"
-                    placeholder="Select Difficulty Level"
+                    name='difficulty'
+                    placeholder='Select Difficulty Level'
                     options={DIFFICULTY}
-                    onChange={(e, { name, value }) => 
-                    this.setValue(name, value);
-                  }
+                    onChange={(e, { name, value }) =>
+                      this.setValue(name, value)
+                    }
                   />
-                  <br/>
-                  <Dropdown 
+                  <br />
+                  <Dropdown
                     fluid
                     selection
-                    name="type"
-                    placeholder="Select Questions Type"
+                    name='type'
+                    placeholder='Select Questions Type'
                     options={QUESTIONS_TYPE}
-                    onChange={(e, { name, value }) => 
-                    this.setValue(name, value);
-                  }
+                    onChange={(e, { name, value }) =>
+                      this.setValue(name, value)
+                    }
                   />
-                  <br/>
-                  <Dropdown 
+                  <br />
+                  <Dropdown
                     fluid
                     selection
-                    name="time"
-                    placeholder="Select Countdown Time (In Minutes)"
+                    name='time'
+                    placeholder='Select Countdown Time (In Minutes)'
                     options={COUNTDOWN_TIME}
-                    onChange={(e, { name, value }) => 
-                    this.setValue(name, value);
-                  }
+                    onChange={(e, { name, value }) =>
+                      this.setValue(name, value)
+                    }
                   />
-                  <br/>
+                  <br />
                 </Item.Meta>
                 <Divider />
                 <Item.Extra>
                   {/* TODO: ver se logica so no disabled funciona */}
                   {allFieldsSelected ? (
-                    <Button 
+                    <Button
                       primary
-                      content="Start Quiz"
+                      content='Start Quiz'
                       onClick={() => this.props.startQuiz(selectedValues)}
-                      size="big"
-                      icon="play"
-                      labelPosition="left"
+                      size='big'
+                      icon='play'
+                      labelPosition='left'
                     />
                   ) : (
                     <Button
                       disabled
                       primary
-                      content="Start Quiz"
-                      size="big"
-                      icon="play"
-                      labelPosition="left"
+                      content='Start Quiz'
+                      size='big'
+                      icon='play'
+                      labelPosition='left'
                     />
                   )}
                 </Item.Extra>

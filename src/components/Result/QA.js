@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table } from 'semantic-ui-react';
 
-const QA = ({ quistionsAndAnswers }) => (
+const QA = ({ questionsAndAnswers }) => (
   <Table celled striped>
     <Table.Header>
       <Table.Row>

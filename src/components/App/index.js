@@ -51,7 +51,18 @@ class App extends Component {
     return (
       <Fragment>
         <Header />
+        {!isLoading && !isQuizStart && <Main startQuiz={this.startQuiz} />}
+        {!isLoading && isQuizStart && (
+          <Quiz
+            API={API}
+            countdownTime={countdownTime}
+            backToHome={this.backToHome}
+          />
+        )}
+        {isLoading && <Loader />}
       </Fragment>
     );
   }
 }
+
+export default App;

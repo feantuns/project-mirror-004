@@ -15,7 +15,7 @@ const Stats = props => {
   } = props;
 
   const score = Number(((correctAnswers * 100) / totalQuestions).toFixed(2));
-  const { grande, remarks } = calculateGrade(score);
+  const { grade, remarks } = calculateGrade(score);
   const { hours, minutes, seconds } = timeConverter(
     timeTakesToComplete.totalTime - timeTakesToComplete.timerTime
   );

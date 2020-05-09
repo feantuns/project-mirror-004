@@ -92,6 +92,8 @@ class Quiz extends Component {
     const options = [...quizData[questionIndex].incorrect_answers];
     options.splice(outPut, 0, quizData[questionIndex].correct_answer);
 
+    console.log(options, outPut, questionIndex, quizData);
+
     this.setState({ quizData, isLoading: false, options, outPut });
   }
 
@@ -109,7 +111,7 @@ class Quiz extends Component {
     } = this.state;
 
     let point = 0;
-    if (userSelectedAns === he.decode(quizData[questionIndex].correctAnswers)) {
+    if (userSelectedAns === he.decode(quizData[questionIndex].correct_answer)) {
       point = 1;
     }
 
@@ -235,7 +237,7 @@ class Quiz extends Component {
         {!isOffline && !isLoading && (
           <Container>
             <Segment>
-              <Item.Goup divided>
+              <Item.Group divided>
                 <Item>
                   <Item.Content>
                     <Item.Extra>
@@ -318,7 +320,7 @@ class Quiz extends Component {
                     </Item.Extra>
                   </Item.Content>
                 </Item>
-              </Item.Goup>
+              </Item.Group>
             </Segment>
             <br />
           </Container>
